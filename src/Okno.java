@@ -1,24 +1,20 @@
-import java.util.ArrayList;
-import java.util.List;
+
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 public class Okno extends JFrame{
 	
-	List<Zolnierz> listaWojska = new ArrayList<>();
-	List<General> listaGeneralow = new ArrayList<>();
+	JPanel panelStart = new PanelStart(this, null);
 	
-	JPanel panel = new MyPanel(listaWojska, listaGeneralow);
-	MetodaEuklidesowa mE = new MetodaEuklidesowa(listaWojska, listaGeneralow);
+	String nazwaMetody;
 	
 	Okno(){
-		add(panel);
+		add(panelStart);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setVisible(true);
 		setResizable(false);
 		pack();
-		
-		mE.liczArmie();
+		setLocationRelativeTo(null);
+		setVisible(true);
 	}
 }
